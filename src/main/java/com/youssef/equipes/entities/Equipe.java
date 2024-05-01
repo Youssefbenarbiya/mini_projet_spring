@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 @Entity
 public class Equipe {
 	@Id
@@ -14,6 +15,18 @@ public class Equipe {
 	private String nomEquipe;
 	private int rankEquipe;
 	private Date dateCreation;
+	
+	@ManyToOne
+	private Ligue ligue;
+	
+	public Ligue getLigue() {
+		return ligue;
+	}
+
+	public void setLigue(Ligue ligue) {
+		this.ligue = ligue;
+	}
+
 	public Equipe() {
 		super();
 		}

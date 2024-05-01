@@ -3,6 +3,8 @@ package com.youssef.equipes.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.youssef.equipes.entities.Equipe;
@@ -45,6 +47,10 @@ public class EquipeServiceImpl implements EquipeService{
 	public List<Equipe> getAllEquipes() {
 		// TODO Auto-generated method stub
 		return equipeRepository.findAll();
+	}
+	@Override
+	public Page<Equipe> getAllEquipesParPage(int page, int size) {
+	return equipeRepository.findAll(PageRequest.of(page, size));
 	}
 	
 }

@@ -1,6 +1,8 @@
 package com.youssef.equipes.services;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+
 import com.youssef.equipes.entities.Equipe;
 public interface EquipeService {
 	Equipe saveEquipe(Equipe p);
@@ -9,6 +11,7 @@ public interface EquipeService {
 	void deleteEquipeById(Long id);
 	Equipe getEquipe(Long id);
 	List<Equipe> getAllEquipes();
+	Page<Equipe> getAllEquipesParPage(int page, int size);
 }
 
 
