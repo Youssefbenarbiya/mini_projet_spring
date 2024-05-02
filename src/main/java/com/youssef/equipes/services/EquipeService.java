@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 
 import com.youssef.equipes.entities.Equipe;
+import com.youssef.equipes.entities.Ligue;
 public interface EquipeService {
 	Equipe saveEquipe(Equipe p);
 	Equipe updateEquipe(Equipe p);
@@ -12,6 +13,15 @@ public interface EquipeService {
 	Equipe getEquipe(Long id);
 	List<Equipe> getAllEquipes();
 	Page<Equipe> getAllEquipesParPage(int page, int size);
+	
+	List<Equipe> findByNomEquipe(String nom);
+	List<Equipe> findByNomEquipeContains(String nom);
+	List<Equipe> findByNomRank (String nom, int rank);
+	List<Equipe> findByLigue (Ligue ligue);
+	List<Equipe> findByLigueId(Long ligueId);
+	List<Equipe> findByOrderByNomEquipeAsc();
+	List<Equipe> trierEquipesNomsRank();
+	
 }
 
 
